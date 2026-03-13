@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+width: 500px;
+margin: 10px auto;
+}
+#middle { overflow: hidden; }
+#left { float: left; width: 150px; background: red;}
+#right { float: right; width: 350px; background: blue; }
+#top { background: green; }
+#bottom { background: purple; }
+        /* #middle {
+          space between: 양쪽 끝 정렬
+          flex direction: ;
+            display: flex;
+            justify-content: space-between;
+            center: 가운데 정렬
+            flex-end: 오른쪽 정렬
+            space-around : 동일한 여백
+            space-
+          } */
+    .flex-container {
+      width: 100%;
+      border: 1px solid yellow;
+      padding: 10px;
+      background-color: blue;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .flex-box {
+      width: 200px;
+      height: 100px;
+      background-color: green;
+      border: 1px solid red;
+      padding: 10px;
+      margin: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div id="top">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+        cupiditate! ...
+      </div>
+      <div id="middle">
+        <div id="left">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. dolore
+          architecto.
+        </div>
+        <div id="right">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam recusandae laudantium provident sequi eveniet dolorem culpa cum ducimus omnis ipsa pariatur, a, libero officiis voluptate magni. Obcaecati, eaque maxime!
+        </div>
+      </div>
+      <div id="bottom">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. ...
+      </div>
+  </body>
+</html>
