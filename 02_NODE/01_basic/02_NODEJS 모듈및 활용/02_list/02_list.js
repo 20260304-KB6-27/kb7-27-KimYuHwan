@@ -1,6 +1,6 @@
-const fs = require('fs'); // fs 모듈 가져오기
+const fs = require('fs'); // fs 모듈 가지오기
 
-// 비동기 방식(Promise)
+// 비동기 처리 (Promise 방식)
 fs.promises
   .readdir('./')
   .then((files) => {
