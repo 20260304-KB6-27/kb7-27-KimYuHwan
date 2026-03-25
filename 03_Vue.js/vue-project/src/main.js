@@ -1,0 +1,12 @@
+import './assets/main.css'
+
+import { createApp } from 'vue'
+// createApp
+// Vue 어플리케이션을 생성하는 함수
+// 인자로 Root Component라고 부르는 최상위 component를 전달
+
+
+import App from './App.vue'
+
+createApp(App).mount('#app')
+// mount : 생성된 Vue 앱을 HTML 문서의 특정 요소에 연결하는 메서드

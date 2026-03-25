@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05-04 인라인 이벤트 핸들러</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 강의 PDF 오타 :valu → :value 로 수정 -->
+      <input type="text" :value="name" @input="(e) => (name = e.target.value)" />
+      <br />
+      이름: <span>{{ name }}</span>
+    </div>
+
+    <script>
+      const { createApp } = Vue;
+
+      createApp({
+        name: "App",
+        data() {
+          return {
+            name: "",
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

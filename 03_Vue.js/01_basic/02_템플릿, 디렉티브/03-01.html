@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue 3 연습용 Composition</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{message}}</h2>
+    </div>
+    <script type="text/javascript">
+      var model = { message: 'Hello Vue3!' };
+      var vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return model;
+        },
+      }).mount('#app');
+    </script>
+  </body>
+  <!--
+========== 코드 분석 (맨 아래로 모아 둠) ==========
+
+[HTML / 구조]
+· <!doctype html>     : HTML5 문서 선언. 표준 모드 렌더링.
+· <html lang="ko">    : 문서 루트. lang은 접근성·검색·번역 등 기본 언어.
+· <head>              : 메타·제목·스크립트 링크(화면에 직접 안 보이는 부분).
+· charset UTF-8       : 문자 인코딩. 한글 등 깨짐 방지.
+· viewport 메타       : 모바일에서 기기 너비에 맞춤, 초기 확대 1배(반응형 기본).
+· <title>             : 브라우저 탭 제목.
+· <script vue.global> : Vue 3 전역 CDN. 전역 객체 Vue에 createApp 등 제공.
+· <body>              : 실제 페이지에 보이는 영역.
+· <div id="app">      : Vue가 mount할 마운트 지점. .mount('#app')와 짝.
+· <h2>{{ message }}</h2>: 템플릿 보간. data()의 message를 화면에 출력.
+· 인라인 <script>      : 앱 생성·마운트 로직.
+
+[스크립트]
+· var model = { message: '...' }
+  앱 데이터 객체. data()에서 반환해 템플릿과 연결.
+· var vm = Vue.createApp({ ... }).mount('#app')
+  앱 인스턴스 생성 후 #app에 붙임. vm은 디버깅 등 참조용(선택).
+· name: 'App'          : 컴포넌트 이름(Vue DevTools 등).
+· data() { return model; }
+  컴포넌트 상태. 함수로 두어 인스턴스마다 독립 데이터.
+· .mount('#app')       : id가 app인 요소 안에서 렌더링 시작.
+
+[참고]
+· Vue CDN은 head의 vue.global.js 한 번만 로드(같은 페이지에서 unpkg/vue 중복 로드는 피하세요).
+--></html>

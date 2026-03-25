@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue 3 기초 실습</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<!-- 
+CDN : 사용자랑 가까운 서버에서 콘텐츠를 제공하여 웹사이트 로딩을 빠르게 도와주는 네트워크
+(content delivery Network)    
+-->
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{message}}</h2>
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let model = { message: 'Hello Vue3!' };
+      
+      let vm = Vue.createApp({
+        name: 'App',
+        
+        data() {
+          return model;
+        },
+      }).mount('#app'); 
+    </script>
+  </body>
+</html>

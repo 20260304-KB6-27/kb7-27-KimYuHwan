@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue 3 연습용 Options API</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <select id="regions">
+        <option disabled="disabled" selected>지역 선택</option>
+        <option v-for="(val, key) in regions" :value="key" :key="key">{{val}}</option>
+      </select>
+    </div>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            regions: {
+              A: 'Asia',
+              B: 'America',
+              C: 'Europe',
+              D: 'Africa',
+              E: 'Oceania',
+            },
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
+
+
+<!--
+1. 데이터의 '이름(Label)'과 '값(Value)'의 분리
+이유: 사용자에게 보여주는 글자(Asia)와 서버에 저장할 데이터(A)는 다른 경우가 많습니다.
+
+배울 점: 객체의 Key는 실제 데이터로, Value는 화면 출력용으로 활용하는 실무형 데이터 구조를 익힐 수 있습니다.
+
+2. 객체 전용 v-for 문법 숙달
+배열과 차이점: 배열은 (아이템, 인덱스) 순서지만, 객체는 (값, 키, 인덱스) 순서로 데이터를 꺼낼 수 있습니다.
+
+배울 점: v-for="(val, key) in regions" 구문을 통해 객체의 속성명(Key)과 속성값(Value)을 동시에 다루는 법을 배웁니다.
+
+3. 고유한 식별자(Key)의 활용
+이유: v-for 사용 시 :key 속성은 필수입니다.
+
+배울 점: 객체에서는 중복되지 않는 속성명(A, B, C...) 자체가 훌륭한 고유 식별자(key)가 될 수 있음을 알 수 있습니다.
+
+4. 확장성 있는 UI 설계
+이유: 지역이 100개로 늘어나도 HTML 코드를 100줄 쓸 필요가 없습니다.
+
+배울 점: 데이터(JavaScript)만 변경하면 화면(HTML)이 알아서 그려지는 **데이터 주도형 설계(Data-Driven Design)**의 기초를 다집니다.
+
+💡 한 줄 결론
+"서버와 통신하기 좋은 '코드값(Key)'을 관리하면서, 동시에 화면에는 친절한 '명칭(Value)'을 뿌려주는 효율적인 데이터 처리 방식을 배우는 코드이다." -->

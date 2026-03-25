@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // RestParameter
+      // 인자 목록을 배열로 모아준다.
+
+      //   function merge(...arg) {
+      //     let message = '';
+      //     for (let arg of args) message += arg;
+
+      //     return message;
+
+      // }
+
+      // console.log(merge('안녕하세요'));
+      // console.log(merge('안녕하세요','반갑습니다'));
+      // console.log(merge('안녕하세요','반갑습니다','김유환입니다'));
+
+      // 스프레드 문법-> 배열이나 객체를 펼칠때 사용
+      let arr1 = [10, 20, 30];
+      let arr2 = [100, 200, 300];
+
+      console.log('가장작은값: ${Math.min(...arr1)}');
+      console.log('전체배열 : ${...arr1}');
+    </script>
+  </head>
+
+  <body></body>
+</html>
