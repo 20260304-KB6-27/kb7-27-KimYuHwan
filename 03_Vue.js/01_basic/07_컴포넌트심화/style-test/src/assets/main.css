@@ -1,0 +1,29 @@
+/* Mac 등에는 'Gungsuh'가 없음 → 한글 궁서체 이름·명조 계열·웹폰트까지 후보를 둠 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap');
+@import './base.css';
+/*
+전역 css
+- 모든 컴포넌트에 적용
+- main.js 에서 import 해야함.
+- 공통 레이아웃/ 기본 스타일 지정시 사용
+*/
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  /* 전역 폰트: #app 하위 전체(스코프 컴포넌트 포함)가 상속 */
+  font-family:
+    Gungsuh, 'Gungsuh', '궁서', 'GungsuhChe', 'New Gulim', Batang, 'AppleMyungjo', 'Noto Serif KR',
+    serif;
+}
+
+.box {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+}
+.global-style {
+  background-color: bisque;
+  border: 2px solid yellow;
+}
